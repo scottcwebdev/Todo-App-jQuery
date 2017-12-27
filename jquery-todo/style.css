@@ -1,0 +1,198 @@
+html,
+body {
+  background: #4bfd96;
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #a3a2a7 1px, rgba(0, 0, 0, 0) 1px);
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#todo-app {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3), 0 25px 50px 0 rgba(0, 0, 0, 0.2);
+  margin: 50px auto 0;
+  height: auto;
+  min-width: 300px;
+  max-width: 460px;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #todo-app {
+    width: 90%;
+    margin-top: 30px;
+  }
+}
+
+/******************
+ HEADER
+*******************/
+
+#header {
+  display: flex;
+  justify-content: center;
+}
+
+#header h1 {
+  color: #fff;
+  font-size: 3em;
+  margin: 0;
+}
+
+@media only screen and (min-device-width : 768px) {
+  #header h1 {
+    font-size: 4em;
+  }
+}
+
+@media only screen and (min-device-width : 992px) {
+  #header h1 {
+    font-size: 5em;
+  }
+}
+
+/******************
+ TEXT INPUT
+*******************/
+
+#text-input {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.chevron::before {
+	border-style: solid;
+	border-width: 0.25em 0.25em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+}
+
+.chevron.bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+
+.chevron.bottom {
+  z-index: 1;
+  color: #a3a2a7;
+  position: absolute;
+  left: 15px;
+  top: 20px;
+}
+
+#text-box {
+  border: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(163,162,167,0.23);
+  transition: ease 0.4s;
+  outline: none;
+  width: 100%
+}
+
+#text-box:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 5px 5px rgba(163,162,167,0.22);
+  cursor: pointer;
+}
+
+#text-box[type="text"] {
+  color: #000;
+  opacity: 0.8;
+  font-size: 24px;
+  font-weight: 300;
+  padding: 15px 0 15px 50px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+  font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+  font-style: italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+  font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+  font-style: italic;
+}
+
+/******************
+ HANDLEBARS OUTPUT
+*******************/
+#todos ul {
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todos ::before div i {
+  position: absolute;
+  color: #a3a2a7;
+  right: 40px;
+  top: 18px;
+}
+
+#todos ul li {
+  display: inline-block;
+  position: relative;
+  font-size: 24px;
+  margin: 0;
+  padding: 12px;
+  width: 95%;
+  border-bottom: 1px solid rgba(163,162,167, 0.3)
+}
+
+.toggle {
+  text-align: center;
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  margin: 0 auto;
+  border: none;
+  -webkit-appearance: none;
+  appearnce: none;
+}
+
+input[type="checkbox"]:focus{
+  outline:0;
+}
+
+.toggle:after {
+	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+.toggle:checked:after {
+	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+.toggle-label {
+  margin-left: 50px;
+}
+
+.delete {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: rgba(163,162,167, 0.3);
+  transition: ease 0.4s;
+}
+
+.delete:hover {
+  color: pink;
+  cursor: pointer;
+}

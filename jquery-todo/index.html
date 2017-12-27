@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Todo</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fontawesome.com/67b186d719.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header id="header">
+      <h1>jQuery Todo</h1>
+    </header><!-- Header -->
+
+    <section id="todo-app">
+
+      <div id="text-input">
+        <span id="chevron" class="chevron bottom"></span>
+        <input id="text-box" type="text" placeholder="Add a new todo!">
+      </div><!-- Todo Text Input -->
+      <div id="todos">
+
+      </div>
+
+    </section><!-- Todo Application -->
+
+    <script id="main" type="text/x-handlebars-template">
+
+      <ul>
+      {{#this}}
+          <li><input type="checkbox" class="toggle"><label class="toggle-label">{{todo}}</label><i class="fa fa-times delete" aria-hidden="true"></i></li>
+      {{/this}}
+      </ul>
+
+    </script><!-- Handlebars.js HTML Template -->
+
+    <!-- JS Links -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="client.js"></script>
+
+  </body>
+</html>
